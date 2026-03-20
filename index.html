@@ -50,17 +50,17 @@
 
     const palabras = {
       
-      cempa: () => shape(8, 0.5, 0.6).repeat(4, 4).modulate(osc (100, 0.8, 0.8).rotate(0, 0.5)).color(1,()=> Math.sin(time)*0.1+0.5,0).rotate(() => time* 1),
+      cempa: () => shape(8, 0.5, 0.6).repeat(4, 4).modulate(osc(100,0.8,0.8).rotate(0,0.5)).color(1,()=>Math.sin(time)*0.1+0.5,0).rotate(()=>time*1),
       orquidea: () => osc(50,0.2,1).kaleid().mask(shape(5,0.5,2)).modulateRotate(shape(1,0.02,0.02)).modulateRotate(shape(1,0.2,0.03)).modulateRotate(shape(10,0.5,0.2)).scale(0.4).add(shape(8,0.2,1).color(1,1,1.2,1)).rotate(()=>time*-1),
       peyotillo: () => a.show(),a.setBins(6),osc(8,0.5,10).kaleid(()=> a.fft[0]*0.06+6).color(0.5,0.5, 0.4).modulateScale(noise(200,0.5),0.6).rotate(()=> time* 10+ a.fft[1]),
       dalia: () => osc(6,0.2,1.2).kaleid(()=>a.fft[0]*0+6).color(2,1.5+a.fft[0],10).modulateScale(noise(1,1),()=> a.fft[2]*50).rotate(()=>time*5+a.fft[1]),
-      ipomea: () => shape (6,0.2,1).repeat (6,6).rotate(()=> time*2).modulate (osc(7,0.8,1.2).kaleid(10),0.4).color(1,1,3).add(shape(6,2).scale(() => Math.sin(time)*0.1+0.5).rotate(() => time*2).color(2,1,3)).kaleid (10),
-      cactacea: () => shape(8, 0.02, 0.2).scale(() => 2 + a.fft[0] * 0.2).modulate (noise(10, 1) .rotate(() => time *2)).repeat (8,8).scale(() => 0.5 + a.fft[1] * 0.2).mult(shape(10, 0.6, 0.2)),
+      ipomea: () => shape (6,0.2,1).repeat (6,6).rotate(()=> time*2).modulate (osc(7,0.8,1.2).kaleid(10),0.4).color(1,1,3).add(shape(6,2).scale(()=>Math.sin(time)*0.1+0.5).rotate(() => time*2).color(2,1,3)).kaleid (10),
+      cactacea: () => shape(8,0.02,0.2).scale(()=>2+a.fft[0]*0.2).modulate(noise(10, 1).rotate(()=>time*2)).repeat (8,8).scale(()=>0.5+ a.fft[1]* 0.2).mult(shape(10, 0.6, 0.2)),
       pasiflora: () => a.show()a.setBins(8)osc(5,1,10).kaleid(100).mask(shape(5,0.5,1)).modulateRotate(shape(5,0.5,2)).modulateRotate(shape(4,0.1,3)).modulateRotate(shape(4,0.1,0.8)).scale(0.3).add(shape(4,0.2,1).color(1,1,1)).rotate(()=>time*2).colorama(3,2,1).repeat (5,1)
-.modulateScale(osc(3, 0.1).scale(() => a.fft[0] * 0.3 + 0.8)),
-      cosmos: () => shape(5,0.2,.5).repeat (4,4).rotate(0,0.1).color(1,0.1,0.7).kaleid(5) .brightness(0.1).luma(-100).modulateRotate(o0,()=>mouse.x*0.003),
-      solanum: () => shape(6,0.3,0.2).repeat (20,5).rotate(0,0.1).color(0.6,0.1,0.8).kaleid(5).brightness(0.3).luma(-100).modulateRotate(o0,()=>mouse.x*0.03),
-      pensamiento: () => shape(6,0.5,1).repeat (1,5).rotate(0,0.1).color(0.5,0.6,1).kaleid(4) .brightness(0.3).luma(0.5).modulateRotate(o0,()=>mouse.x*0.03),
+.modulateScale(osc(3, 0.1).scale(() => a.fft[0] * 0.3+0.8)),
+      cosmos: () => shape(5,0.2,.5).repeat(4,4).rotate(0,0.1).color(1,0.1,0.7).kaleid(5).brightness(0.1).luma(-100).modulateRotate(o0,()=>mouse.x*0.003),
+      solanum: () => shape(6,0.3,0.2).repeat(20,5).rotate(0,0.1).color(0.6,0.1,0.8).kaleid(5).brightness(0.3).luma(-100).modulateRotate(o0,()=>mouse.x*0.03),
+      pensamiento: () => shape(6,0.5,1).repeat(1,5).rotate(0,0.1).color(0.5,0.6,1).kaleid(4).brightness(0.3).luma(0.5).modulateRotate(o0,()=>mouse.x*0.03),
 a: () => voronoi([4,2],7,2).modulatePixelate(osc(),0.70,0.5).scale(2).colorama(-0.95),
 b: () => osc().modulate(noise(),0.25).scale([1,3,6],5).colorama(-0.40).colorama(1),
 c: () => noise(15).modulate(voronoi(3,2,5)).kaleid(30).colorama(0.40).colorama(0.5).scale(1),

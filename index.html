@@ -49,9 +49,9 @@
     const hydra = new Hydra({ detectAudio: true });
 
     const palabras = {
-      cempa: () => shape(8,0.5,0.6).repeat(4,4).modulate(osc(100,0.8,0.8).rotate(0,0.5)).color(1,()=>Math.sin(time)*0.1+0.5,0).rotate(()=>time*1),
+      cempa: () => shape(8,0.5,0.6).repeat(4,4).modulate(osc(100,0.8,0.8).rotate(0,0.5)).color(1,()=> Math.sin(time)*0.1+0.5,0).rotate(()=>time*1),
       orquidea: () => osc(50,0.2,1).kaleid().mask(shape(5,0.5,2)).modulateRotate(shape(1,0.02,0.02)).modulateRotate(shape(1,0.2,0.03)).modulateRotate(shape(10,0.5,0.2)).scale(0.4).add(shape(8,0.2,1).color(1,1,1.2,1)).rotate(()=>time*-1),
-      peyotillo: () => a.show(),a.setBins(6),osc(8,0.5,10).kaleid(()=> a.fft[0]*0.06+6).color(0.5,0.5, 0.4).modulateScale(noise(200,0.5),0.6).rotate(()=> time* 10+ a.fft[1]),
+      peyotillo: () => osc(8,0.5,10).kaleid(()=> a.fft[0]*0.06+6).color(0.5,0.5, 0.4).modulateScale(noise(200,0.5),0.6).rotate(()=> time* 10+ a.fft[1]),
      
       
 a: () => voronoi([4,2],7,2).modulatePixelate(osc(),0.70,0.5).scale(2).colorama(-0.95),
